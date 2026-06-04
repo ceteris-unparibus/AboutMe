@@ -554,6 +554,67 @@ button:focus,
     margin-top: 12px;
 }
 
+
+/* Gives the thesis highlight a stronger first-position treatment in featured projects. */
+.featured-project-spotlight {
+    margin-bottom: 22px;
+    border-color: rgba(47, 93, 74, 0.38);
+    background: rgba(228, 238, 232, 0.78);
+}
+
+.featured-project-spotlight h3 {
+    font-size: 1.48rem;
+}
+
+/* Thesis page layouts for evidence, metrics, and paired plots. */
+.thesis-actions {
+    margin-top: 20px;
+}
+
+.metric-grid,
+.evidence-grid,
+.plot-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.metric-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 18px;
+}
+
+.evidence-grid,
+.plot-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.metric-card,
+.evidence-card {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 8px 18px rgba(31, 63, 50, 0.06);
+}
+
+.metric-value {
+    margin-bottom: 4px;
+    color: var(--green-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.evidence-card h3,
+.metric-card p:last-child {
+    margin-top: 0;
+}
+
+.thesis-page .graph-bubble h3 {
+    margin-top: 0;
+}
+
 /* Mobile layout adjustments so the page still works on phones. */
 @media (max-width: 700px) {
     /* Reduces the outer page padding on smaller screens. */
@@ -628,5 +689,13 @@ button:focus,
     /* Makes nav links full width for easier tapping. */
     nav a {
         width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .metric-grid,
+    .evidence-grid,
+    .plot-grid {
+        grid-template-columns: 1fr;
     }
 }

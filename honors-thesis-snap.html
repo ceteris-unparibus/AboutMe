@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honors Thesis: SNAP Certification Policy and Educational Inequality</title>
+    <link rel="stylesheet" href="project8-styles.css?v=2">
+</head>
+<body>
+    <header>
+        <p class="project-nav"><a href="index.html" title="Return to home page">Home</a></p>
+        <h1>Administrative Design and Educational Inequality</h1>
+        <p class="subtitle">Honors thesis project on how SNAP certification length policy may shape educational inequality through administrative burden and household stability.</p>
+        <div class="project-actions thesis-actions">
+            <a class="button" href="Hughes_thesis_2026.pdf" title="Open the full honors thesis PDF">Full Thesis</a>
+            <a class="button" href="SNAP_study_final.ipynb" title="Open the research notebook file">Research Notebook</a>
+        </div>
+    </header>
+
+    <main class="project-page thesis-page">
+        <section>
+            <h2>Project Overview</h2>
+            <p>
+                This thesis asks whether state choices about SNAP certification length are associated with changes in educational inequality. Certification length determines how often households must re-prove eligibility to keep benefits, making it a concrete policy lever for studying administrative burden.
+            </p>
+            <p>
+                The project combines USDA SNAP policy data, USDA participation-rate estimates, and Stanford Education Data Archive outcomes in a state-year panel. The main empirical strategy is a difference-in-differences design with state and year fixed effects.
+            </p>
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <p class="metric-value">-0.045</p>
+                    <p>Main DiD estimate for the economic disadvantage achievement gap.</p>
+                </div>
+                <div class="metric-card">
+                    <p class="metric-value">-0.038</p>
+                    <p>Sensitivity estimate using low-certification control states.</p>
+                </div>
+                <div class="metric-card">
+                    <p class="metric-value">419</p>
+                    <p>State-year observations in the main achievement-gap model.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Literature Review Highlights</h2>
+            <p>
+                The literature review builds the bridge from SNAP administration to children’s academic outcomes. The key idea is that public benefits do not only matter through benefit size; they also matter through whether eligible households can maintain stable access.
+            </p>
+            <div class="evidence-grid">
+                <div class="evidence-card">
+                    <h3>SNAP Stabilizes Household Resources</h3>
+                    <p>SNAP reduces poverty depth and material hardship, especially for households with children, by expanding food-purchasing resources and freeing scarce income for other needs.</p>
+                </div>
+                <div class="evidence-card">
+                    <h3>Administrative Burden Shapes Access</h3>
+                    <p>Learning, compliance, and psychological costs can keep eligible households from accessing or maintaining benefits, even when they formally qualify.</p>
+                </div>
+                <div class="evidence-card">
+                    <h3>Recertification Creates Procedural Risk</h3>
+                    <p>Shorter certification periods expose households more often to paperwork, interviews, deadlines, and the possibility of losing benefits for procedural reasons.</p>
+                </div>
+                <div class="evidence-card">
+                    <h3>Instability Can Reach Children</h3>
+                    <p>Prior research links SNAP timing and household resource stability to student performance, suggesting that benefit instability may affect learning conditions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Policy Variation</h2>
+            <p>
+                Treatment is defined as a meaningful upward increase in average certification length relative to a state’s baseline. The plots below show how the policy change appears across treated states and where treatment timing falls across the study period.
+            </p>
+            <div class="plot-grid">
+                <div class="graph-bubble">
+                    <h3>Certification Length by Treatment Group</h3>
+                    <img src="snap-cert-treatment-groups.png" alt="Average SNAP certification length trends by treatment group">
+                </div>
+                <div class="graph-bubble">
+                    <h3>First Treated Year</h3>
+                    <img src="snap-first-treated-year.png" alt="Distribution of first treated year among upward-treated states">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Main Finding</h2>
+            <p>
+                Longer certification periods are associated with reductions in the economic disadvantage achievement gap. The preferred model estimates a 0.045 standard deviation reduction after upward certification-length treatment. A narrower comparison using low-certification control states produces a similar 0.038 standard deviation reduction.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Estimate</th>
+                        <th>Std. Error</th>
+                        <th>p-value</th>
+                        <th>Observations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Main DiD</td>
+                        <td>-0.045</td>
+                        <td>0.018</td>
+                        <td>0.017</td>
+                        <td>419</td>
+                    </tr>
+                    <tr>
+                        <td>Low-certification controls</td>
+                        <td>-0.038</td>
+                        <td>0.017</td>
+                        <td>0.040</td>
+                        <td>182</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="plot-grid">
+                <div class="graph-bubble">
+                    <h3>Achievement Gap: All Controls</h3>
+                    <img src="snap-gap-all-controls.png" alt="Economic disadvantage achievement gap trends for treated states and all controls">
+                </div>
+                <div class="graph-bubble">
+                    <h3>Achievement Gap: Low-Certification Controls</h3>
+                    <img src="snap-gap-low-controls.png" alt="Economic disadvantage achievement gap trends for treated states and low-certification controls">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Mechanism Check</h2>
+            <p>
+                The participation-rate models are directionally consistent with the administrative-burden mechanism, but less conclusive than the achievement-gap results. Certification length is positively associated with participation in the fixed-effects model, while the treatment DiD estimate is positive but not statistically significant.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Participation Model</th>
+                        <th>Estimate</th>
+                        <th>Std. Error</th>
+                        <th>p-value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Certification length</td>
+                        <td>0.729</td>
+                        <td>0.371</td>
+                        <td>0.055</td>
+                    </tr>
+                    <tr>
+                        <td>Post upward treatment</td>
+                        <td>2.195</td>
+                        <td>2.838</td>
+                        <td>0.443</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="plot-grid">
+                <div class="graph-bubble">
+                    <h3>SNAP Participation Pre-Trends</h3>
+                    <img src="snap-participation-indexed-pretrend.png" alt="Indexed SNAP participation pre-treatment trends">
+                </div>
+                <div class="graph-bubble">
+                    <h3>SEDA Score Pre-Trends</h3>
+                    <img src="snap-seda-ecd-indexed-pretrend.png" alt="Indexed SEDA economic disadvantage score pre-treatment trends">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Featured Code</h2>
+            <p>
+                The core model uses state and year fixed effects with state-clustered standard errors. This setup compares changes within treated states after certification length increases to changes in control states over the same years.
+            </p>
+            <pre class="code-sample"><code>fe_gap_model_final &lt;- feols(
+  gap_score ~ treated_post | stateabb + year,
+  data = cert_seda_df_extended %&gt;% filter(year &gt;= 2010),
+  cluster = "stateabb"
+)</code></pre>
+        </section>
+
+        <section>
+            <h2>Interpretation</h2>
+            <p>
+                The results suggest that SNAP administrative design may have downstream implications for educational inequality. Because treatment is not randomized and the data do not identify SNAP-recipient students directly, the findings should be read as evidence consistent with an administrative-burden channel rather than definitive proof of causation.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
