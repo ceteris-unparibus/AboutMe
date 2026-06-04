@@ -13,7 +13,7 @@
         <p class="subtitle">Honors thesis project on how SNAP certification length policy may shape educational inequality through administrative burden and household stability.</p>
         <div class="project-actions thesis-actions">
             <a class="button" href="Hughes_thesis_2026.pdf" title="Open the full honors thesis PDF">Full Thesis</a>
-            <a class="button" href="SNAP_study_final.ipynb" title="Open the research notebook file">Research Notebook</a>
+            <a class="button" href="snap-study-full-notebook.html" title="Open the full research notebook with outputs">View Full Notebook</a>
         </div>
     </header>
 
@@ -21,23 +21,23 @@
         <section>
             <h2>Project Overview</h2>
             <p>
-                This thesis asks whether state choices about SNAP certification length are associated with changes in educational inequality. Certification length determines how often households must re-prove eligibility to keep benefits, making it a concrete policy lever for studying administrative burden.
+                This thesis asks whether state choices about SNAP certification length are associated with changes in educational inequality. The central realization is that SNAP supports children partly by stabilizing the material conditions of the household, and administrative burden can interrupt that stability. When families must repeatedly navigate paperwork, deadlines, and procedural risk to maintain benefits, the households with the fewest resources may be most exposed to benefit interruptions, budget strain, food insecurity, and stress that shape the home conditions that support learning.
             </p>
             <p>
-                The project combines USDA SNAP policy data, USDA participation-rate estimates, and Stanford Education Data Archive outcomes in a state-year panel. The main empirical strategy is a difference-in-differences design with state and year fixed effects.
+                Certification length is the policy lever because it determines how often households must re-prove eligibility to keep benefits. The project combines USDA SNAP policy data, USDA participation-rate estimates, and Stanford Education Data Archive outcomes in a state-year panel, then uses a difference-in-differences design with state and year fixed effects.
             </p>
             <div class="metric-grid">
                 <div class="metric-card">
                     <p class="metric-value">-0.045</p>
-                    <p>Main DiD estimate for the economic disadvantage achievement gap.</p>
+                    <p>Estimated drop in the economic disadvantage achievement gap after states lengthened SNAP certification periods.</p>
                 </div>
                 <div class="metric-card">
                     <p class="metric-value">-0.038</p>
-                    <p>Sensitivity estimate using low-certification control states.</p>
+                    <p>Similar gap reduction when treated states are compared with low-certification states.</p>
                 </div>
                 <div class="metric-card">
                     <p class="metric-value">419</p>
-                    <p>State-year observations in the main achievement-gap model.</p>
+                    <p>State-year comparisons used to connect policy changes with education outcomes.</p>
                 </div>
             </div>
         </section>
@@ -45,24 +45,24 @@
         <section>
             <h2>Literature Review Highlights</h2>
             <p>
-                The literature review builds the bridge from SNAP administration to children’s academic outcomes. The key idea is that public benefits do not only matter through benefit size; they also matter through whether eligible households can maintain stable access.
+                The literature review builds a pathway from administrative burden to educational inequality: SNAP administration affects benefit stability, benefit stability affects household stability, and household stability helps shape the learning conditions available to economically disadvantaged students.
             </p>
             <div class="evidence-grid">
                 <div class="evidence-card">
-                    <h3>SNAP Stabilizes Household Resources</h3>
-                    <p>SNAP reduces poverty depth and material hardship, especially for households with children, by expanding food-purchasing resources and freeing scarce income for other needs.</p>
+                    <h3>SNAP Stabilizes the Household</h3>
+                    <p>SNAP reduces poverty depth and material hardship, especially for households with children, by expanding food-purchasing resources and freeing scarce income for other needs (Tiehen, Jolliffe, & Gundersen, 2012; Dasgupta & Plum, 2023).</p>
                 </div>
                 <div class="evidence-card">
-                    <h3>Administrative Burden Shapes Access</h3>
-                    <p>Learning, compliance, and psychological costs can keep eligible households from accessing or maintaining benefits, even when they formally qualify.</p>
+                    <h3>Burden Creates Stability Inequity</h3>
+                    <p>Learning, compliance, and psychological costs do not fall evenly. They make it harder for some eligible households to maintain benefits, creating unequal exposure to instability even within the population the program is meant to serve (Herd & Moynihan, 2025; Murphy, 2023).</p>
                 </div>
                 <div class="evidence-card">
-                    <h3>Recertification Creates Procedural Risk</h3>
-                    <p>Shorter certification periods expose households more often to paperwork, interviews, deadlines, and the possibility of losing benefits for procedural reasons.</p>
+                    <h3>Recertification Interrupts Stability</h3>
+                    <p>Shorter certification periods expose households more often to paperwork, interviews, deadlines, and the possibility of losing benefits for procedural reasons, making program access less stable over time (Gray, 2018; Giannella et al., 2024).</p>
                 </div>
                 <div class="evidence-card">
-                    <h3>Instability Can Reach Children</h3>
-                    <p>Prior research links SNAP timing and household resource stability to student performance, suggesting that benefit instability may affect learning conditions.</p>
+                    <h3>Household Stability Reaches School</h3>
+                    <p>Prior research links SNAP timing and household resource stability to student performance, suggesting that unequal benefit stability can become unequal learning conditions for children (Gassman-Pines & Bellows, 2015, 2018; Heinrich et al., 2022).</p>
                 </div>
             </div>
         </section>
@@ -87,7 +87,7 @@
         <section>
             <h2>Main Finding</h2>
             <p>
-                Longer certification periods are associated with reductions in the economic disadvantage achievement gap. The preferred model estimates a 0.045 standard deviation reduction after upward certification-length treatment. A narrower comparison using low-certification control states produces a similar 0.038 standard deviation reduction.
+                Longer certification periods are associated with reductions in the economic disadvantage achievement gap. I interpret this as evidence consistent with a household-stability pathway: reducing recertification burden may help eligible families maintain steadier access to support, and steadier household conditions may reduce educational differences linked to economic disadvantage. The preferred model estimates a 0.045 standard deviation reduction after upward certification-length treatment. A narrower comparison using low-certification control states produces a similar 0.038 standard deviation reduction.
             </p>
             <table>
                 <thead>
@@ -170,9 +170,9 @@
         </section>
 
         <section>
-            <h2>Featured Code</h2>
+            <h2>Main DiD Model</h2>
             <p>
-                The core model uses state and year fixed effects with state-clustered standard errors. This setup compares changes within treated states after certification length increases to changes in control states over the same years.
+                The core difference-in-differences model uses state and year fixed effects with state-clustered standard errors. This setup compares changes within treated states after certification length increases to changes in control states over the same years.
             </p>
             <pre class="code-sample"><code>fe_gap_model_final &lt;- feols(
   gap_score ~ treated_post | stateabb + year,
