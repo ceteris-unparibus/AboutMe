@@ -63,6 +63,29 @@ body::before {
     z-index: -1;
 }
 
+/* Project detail pages use a restrained texture instead of a scenic image. */
+body.project-detail::before {
+    background-image:
+        radial-gradient(circle at 18% 12%, rgba(228, 238, 232, 0.62), transparent 22rem),
+        radial-gradient(circle at 84% 18%, rgba(138, 154, 91, 0.14), transparent 18rem),
+        linear-gradient(135deg, rgba(47, 93, 74, 0.04) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(47, 93, 74, 0.035) 25%, transparent 25%),
+        linear-gradient(180deg, rgba(251, 251, 247, 0.96), rgba(247, 247, 242, 0.98));
+    background-position:
+        center,
+        center,
+        0 0,
+        12px 12px,
+        center;
+    background-size:
+        auto,
+        auto,
+        24px 24px,
+        24px 24px,
+        auto;
+    opacity: 1;
+}
+
 /* Gives the major page areas a light panel effect so the text stays readable. */
 header,
 footer {
