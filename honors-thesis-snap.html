@@ -87,7 +87,7 @@
         <section>
             <h2>Main Finding</h2>
             <p>
-                Longer certification periods are associated with reductions in the economic disadvantage achievement gap. I interpret this as evidence consistent with a household-stability pathway: reducing recertification burden may help eligible families maintain steadier access to support, and steadier household conditions may reduce educational differences linked to economic disadvantage. The preferred model estimates a 0.045 standard deviation reduction after upward certification-length treatment. A narrower comparison using low-certification control states produces a similar 0.038 standard deviation reduction.
+                Longer certification periods are associated with reductions in the economic disadvantage achievement gap. The preferred model estimates a 0.045 standard deviation reduction after upward certification-length treatment. A narrower comparison using low-certification control states produces a similar 0.038 standard deviation reduction.
             </p>
             <table>
                 <thead>
@@ -97,25 +97,29 @@
                         <th>Std. Error</th>
                         <th>p-value</th>
                         <th>Observations</th>
+                        <th>Adjusted R<sup>2</sup></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Main DiD</td>
                         <td>-0.045</td>
-                        <td>0.018</td>
-                        <td>0.017</td>
+                        <td>(0.018)</td>
+                        <td class="p-value-highlight">0.017**</td>
                         <td>419</td>
+                        <td>0.84</td>
                     </tr>
                     <tr>
                         <td>Low-certification controls</td>
                         <td>-0.038</td>
-                        <td>0.017</td>
-                        <td>0.040</td>
+                        <td>(0.017)</td>
+                        <td class="p-value-highlight">0.040**</td>
                         <td>182</td>
+                        <td>0.89</td>
                     </tr>
                 </tbody>
             </table>
+            <p class="table-note">* p &lt; 0.10, ** p &lt; 0.05, *** p &lt; 0.01.</p>
             <div class="plot-grid">
                 <div class="graph-bubble">
                     <h3>Achievement Gap: All Controls</h3>
@@ -140,23 +144,30 @@
                         <th>Estimate</th>
                         <th>Std. Error</th>
                         <th>p-value</th>
+                        <th>Observations</th>
+                        <th>Adjusted R<sup>2</sup></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Certification length</td>
                         <td>0.729</td>
-                        <td>0.371</td>
-                        <td>0.055</td>
+                        <td>(0.371)</td>
+                        <td class="p-value-highlight">0.055*</td>
+                        <td>510</td>
+                        <td>0.770</td>
                     </tr>
                     <tr>
                         <td>Post upward treatment</td>
                         <td>2.195</td>
-                        <td>2.838</td>
+                        <td>(2.838)</td>
                         <td>0.443</td>
+                        <td>510</td>
+                        <td>0.765</td>
                     </tr>
                 </tbody>
             </table>
+            <p class="table-note">* p &lt; 0.10, ** p &lt; 0.05, *** p &lt; 0.01.</p>
             <div class="plot-grid">
                 <div class="graph-bubble">
                     <h3>SNAP Participation Pre-Trends</h3>
