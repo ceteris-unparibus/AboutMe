@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Honors Thesis: SNAP Certification Policy and Educational Inequality</title>
-    <link rel="stylesheet" href="project8-styles.css?v=6">
+    <link rel="stylesheet" href="project8-styles.css?v=24">
 </head>
 <body class="project-detail">
     <header>
         <p class="project-nav"><a href="index.html" title="Return to home page">Home</a></p>
-        <h1>Administrative Design and Educational Inequality</h1>
-        <p class="subtitle">Honors thesis project on how SNAP certification length policy may shape educational inequality through administrative burden and household stability.</p>
+        <h1 class="thesis-title">
+            <span>Administrative Design and Educational Inequality:</span>
+            <span class="thesis-title-subtitle">Evidence from SNAP Certification Length Policy</span>
+        </h1>
+        <p class="subtitle">Undergraduate honors thesis project on how SNAP certification length policy may shape educational inequality through administrative burden and household stability.</p>
         <div class="project-actions thesis-actions">
             <a class="button" href="Hughes_thesis_2026.pdf" title="Open the full honors thesis PDF">Full Thesis</a>
             <a class="button" href="snap-study-full-notebook.html" title="Open the full research notebook with outputs">View Full Notebook</a>
@@ -82,6 +85,21 @@
                     <img src="snap-first-treated-year.png" alt="Distribution of first treated year among upward-treated states">
                 </div>
             </div>
+        </section>
+
+        <section>
+            <h2>Model Specification</h2>
+            <p>
+                The core difference-in-differences model uses state and year fixed effects with state-clustered standard errors. This setup compares changes within treated states after certification length increases to changes in control states over the same years.
+            </p>
+            <div class="model-spec" aria-label="Difference-in-differences model specification">
+                <span class="model-equation">
+                    Gap<sub>st</sub> = &beta;<sub>0</sub> + &beta;<sub>1</sub>(Treated<sub>s</sub> &times; Post<sub>st</sub>) + &alpha;<sub>s</sub> + &lambda;<sub>t</sub> + &epsilon;<sub>st</sub>
+                </span>
+            </div>
+            <p>
+                In this specification, Gap<sub>st</sub> is the state-year economic disadvantage achievement gap. The coefficient &beta;<sub>1</sub> estimates how much the gap changed in treated states after certification length increased, relative to the change in control states over the same period. A negative coefficient means the economic disadvantage gap narrowed after the policy change; a positive coefficient would mean the gap widened. State fixed effects account for persistent differences across states, year fixed effects account for common national shifts, and state-clustered standard errors account for repeated observations within the same state over time.
+            </p>
         </section>
 
         <section>
@@ -178,18 +196,6 @@
                     <img src="snap-seda-ecd-indexed-pretrend.png" alt="Indexed SEDA economic disadvantage score pre-treatment trends">
                 </div>
             </div>
-        </section>
-
-        <section>
-            <h2>Main DiD Model</h2>
-            <p>
-                The core difference-in-differences model uses state and year fixed effects with state-clustered standard errors. This setup compares changes within treated states after certification length increases to changes in control states over the same years.
-            </p>
-            <pre class="code-sample"><code>fe_gap_model_final &lt;- feols(
-  gap_score ~ treated_post | stateabb + year,
-  data = cert_seda_df_extended %&gt;% filter(year &gt;= 2010),
-  cluster = "stateabb"
-)</code></pre>
         </section>
 
         <section>
