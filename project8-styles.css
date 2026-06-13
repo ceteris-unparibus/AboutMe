@@ -395,6 +395,24 @@ button:focus,
     border-color: var(--green-dark);
 }
 
+.button.resume-button {
+    background: transparent;
+    color: var(--green-dark);
+    border-color: var(--muted);
+    box-shadow: none;
+}
+
+.button.resume-button:hover,
+.button.resume-button:focus {
+    background: rgba(214, 231, 220, 0.3);
+    border-color: var(--green-dark);
+    color: var(--green-dark);
+}
+
+#experience .button {
+    margin-top: 20px;
+}
+
 /* Intro/subtitle text should feel quieter than the main heading. */
 .intro,
 .subtitle {
@@ -691,6 +709,14 @@ button:focus,
 .evidence-grid,
 .plot-grid {
     grid-template-columns: repeat(2, 1fr);
+}
+
+.plot-grid.centered-plots {
+    justify-items: center;
+}
+
+.plot-grid.centered-plots .graph-bubble {
+    width: min(560px, 100%);
 }
 
 .metric-card,
