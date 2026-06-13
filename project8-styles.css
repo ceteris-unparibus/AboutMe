@@ -286,6 +286,11 @@ section h2:first-child {
     margin-top: 0;
 }
 
+.project-overview .overview-lead {
+    color: var(--green-dark);
+    font-weight: 700;
+}
+
 /* Sets consistent spacing for both ordered and unordered lists. */
 ul,
 ol {
