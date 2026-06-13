@@ -341,6 +341,27 @@ td:not(:first-child) {
     text-align: right;
 }
 
+table.summary-table {
+    width: auto;
+    max-width: 720px;
+    margin: 20px 0;
+}
+
+table.summary-table thead th {
+    background: var(--green-soft);
+    color: var(--text);
+}
+
+table.summary-table tfoot td {
+    border-top: 1px solid var(--line);
+    font-weight: 600;
+}
+
+table.summary-table td:first-child {
+    text-align: left;
+}
+
+
 .summary-table td:nth-child(3) {
     text-align: left;
 }
@@ -712,6 +733,7 @@ button:focus,
 }
 
 .plot-grid.centered-plots {
+    grid-template-columns: 1fr;
     justify-items: center;
 }
 
