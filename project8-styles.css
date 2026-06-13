@@ -365,6 +365,12 @@ td.p-value-highlight {
     font-size: 0.9rem;
 }
 
+.chart-interpretation {
+    margin: 10px 0 18px;
+    color: var(--green-dark);
+    line-height: 1.5;
+}
+
 /* Shared styling for buttons and button-like links. */
 button,
 .button {
@@ -709,6 +715,14 @@ button:focus,
     margin-top: 18px;
 }
 
+.engagement-index-section .index-visual {
+    margin-top: 6px;
+}
+
+.engagement-index-section > p {
+    margin-bottom: 8px;
+}
+
 .index-scale,
 .index-formula {
     display: grid;
@@ -883,6 +897,31 @@ button:focus,
     border-radius: 18px;
 }
 
+.chart-section {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.chart-card {
+    padding: 34px 56px 38px;
+    border: 1px solid rgba(207, 216, 207, 0.9);
+    border-radius: 22px;
+    background: rgba(255, 255, 250, 0.93);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(4px);
+}
+
+.chart-copy h2 {
+    margin-top: 0;
+}
+
+.chart-section .chart-panel {
+    margin-top: 22px;
+}
+
 .segment-chart,
 .activity-change-chart {
     display: grid;
@@ -952,6 +991,14 @@ button:focus,
 
     /* Reduces section padding on smaller screens. */
     section {
+        padding: 26px 22px 28px;
+    }
+
+    .chart-section {
+        padding: 0;
+    }
+
+    .chart-card {
         padding: 26px 22px 28px;
     }
 
@@ -1066,5 +1113,238 @@ button:focus,
 
     .segment-score {
         text-align: left;
+    }
+}
+
+/* Print-friendly layout for PDF review copies. */
+@media print {
+    @page {
+        size: letter;
+        margin: 0.55in;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    html,
+    body {
+        width: auto;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        background: #fbfaf3;
+        color: #252a27;
+        font-size: 11pt;
+        line-height: 1.45;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    header,
+    footer,
+    section {
+        margin: 0 0 16pt;
+        padding: 18pt;
+        border: 1px solid #cfd8cf;
+        border-radius: 10pt;
+        background: #ffffff;
+        box-shadow: none;
+    }
+
+    header {
+        border-bottom: 4pt solid #2f5d4a;
+    }
+
+    main {
+        display: block;
+        margin-top: 14pt;
+    }
+
+    h1 {
+        font-size: 22pt;
+    }
+
+    body.project-detail > header h1 {
+        font-size: 20pt;
+    }
+
+    .thesis-title {
+        font-size: 18pt;
+    }
+
+    h2 {
+        margin: 20pt 0 10pt;
+        font-size: 16pt;
+    }
+
+    section h2:first-child {
+        margin-top: 0;
+    }
+
+    h3 {
+        font-size: 12.5pt;
+    }
+
+    p,
+    li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    a {
+        color: #17382b;
+        text-decoration: none;
+    }
+
+    .project-nav,
+    .project-actions,
+    nav,
+    .button {
+        display: none;
+    }
+
+    .metric-grid,
+    .evidence-grid,
+    .plot-grid,
+    .insight-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10pt;
+    }
+
+    .metric-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .index-scale,
+    .index-formula,
+    .phase-bars,
+    .segment-chart,
+    .activity-change-chart {
+        gap: 7pt;
+    }
+
+    .index-scale {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .index-formula {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .formula-operator {
+        display: none;
+    }
+
+    .phase-bars {
+        min-height: 190pt;
+    }
+
+    .phase-bar {
+        min-height: 168pt;
+    }
+
+    .metric-card,
+    .evidence-card,
+    .index-band,
+    .formula-card,
+    .activity-phase-chart,
+    .insight-card,
+    .model-spec {
+        background: #ffffff;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .metric-value,
+    .insight-value {
+        font-size: 16pt;
+    }
+
+    .index-score {
+        font-size: 13pt;
+    }
+
+    .formula-value {
+        font-size: 12.5pt;
+    }
+
+    .phase-value {
+        font-size: 10.5pt;
+    }
+
+    .insight-grid {
+        break-inside: auto;
+    }
+
+    .insight-card {
+        min-height: auto;
+    }
+
+    .chart-panel {
+        display: block !important;
+        width: auto !important;
+        max-width: none !important;
+        margin-top: 14pt;
+        background: #ffffff;
+        box-shadow: none;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .segment-chart,
+    .activity-change-chart {
+        display: table !important;
+        table-layout: fixed;
+        width: 100% !important;
+        max-width: none !important;
+        border-collapse: separate;
+        border-spacing: 0 6pt;
+    }
+
+    .activity-phase-chart,
+    table,
+    .plot-grid,
+    .index-visual {
+        break-inside: avoid;
+    }
+
+    .segment-row,
+    .activity-change-row {
+        display: table-row !important;
+        width: 100%;
+        padding: 6pt;
+    }
+
+    .segment-row > span,
+    .activity-change-row > span {
+        display: table-cell !important;
+        vertical-align: middle;
+        padding: 4pt 6pt;
+    }
+
+    .segment-label {
+        width: 120pt;
+    }
+
+    .segment-track,
+    .mini-bar {
+        display: block !important;
+        width: 100% !important;
+        height: 10pt;
+    }
+
+    .segment-score {
+        text-align: right !important;
+    }
+
+    img,
+    table,
+    pre {
+        max-width: 100%;
     }
 }

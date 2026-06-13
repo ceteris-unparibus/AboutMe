@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UO Advancement Donor Recognition Outreach Study</title>
-    <link rel="stylesheet" href="project8-styles.css?v=24">
+    <link rel="stylesheet" href="project8-styles.css?v=32">
 </head>
 <body class="project-detail">
     <header>
@@ -93,7 +93,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="engagement-index-section">
             <h2>Engagement Index</h2>
             <p>
                 The engagement index translated outreach-platform behaviors into a practical
@@ -170,7 +170,7 @@
                 <div class="insight-card">
                     <p class="insight-value">2.07</p>
                     <h3>A Segment Worth Studying</h3>
-                    <p>The $200k-$350k giving segment had an average engagement score above 2 despite a lower completion rate than nearby segments.</p>
+                    <p>Giving Level 4 had an average engagement score above 2 despite a lower completion rate than nearby levels.</p>
                 </div>
                 <div class="insight-card">
                     <p class="insight-value">97%</p>
@@ -183,74 +183,97 @@
                     <p>The no-click group had an average gift-size change that was less than 10% of the clicked group, despite having more individuals.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="chart-panel">
-                <h3>Average Engagement Score by Giving Segment</h3>
-                <div class="segment-chart" aria-label="Average engagement score and completion rate by giving segment">
-                    <div class="segment-row">
-                        <span class="segment-label">Under $25k</span>
-                        <span class="segment-track"><span class="segment-fill" style="--bar-width: 70%;"></span></span>
-                        <span class="segment-score">1.54</span>
-                    </div>
-                    <div class="segment-row">
-                        <span class="segment-label">$25k-$100k</span>
-                        <span class="segment-track"><span class="segment-fill" style="--bar-width: 82%;"></span></span>
-                        <span class="segment-score">1.80</span>
-                    </div>
-                    <div class="segment-row">
-                        <span class="segment-label">$100k-$200k</span>
-                        <span class="segment-track"><span class="segment-fill" style="--bar-width: 90%;"></span></span>
-                        <span class="segment-score">1.98</span>
-                    </div>
-                    <div class="segment-row highlight-row">
-                        <span class="segment-label">$200k-$350k</span>
-                        <span class="segment-track"><span class="segment-fill" style="--bar-width: 94%;"></span></span>
-                        <span class="segment-score">2.07</span>
-                    </div>
-                    <div class="segment-row highlight-row">
-                        <span class="segment-label">$350k-$1M</span>
-                        <span class="segment-track"><span class="segment-fill" style="--bar-width: 100%;"></span></span>
-                        <span class="segment-score">2.19</span>
-                    </div>
-                    <div class="segment-row">
-                        <span class="segment-label">Over $1M</span>
-                        <span class="segment-track"><span class="segment-fill" style="--bar-width: 71%;"></span></span>
-                        <span class="segment-score">1.56</span>
-                    </div>
-                    <div class="segment-row">
-                        <span class="segment-label">None listed</span>
-                        <span class="segment-track"><span class="segment-fill" style="--bar-width: 53%;"></span></span>
-                        <span class="segment-score">1.16</span>
+        <section class="chart-section">
+            <div class="chart-card">
+                <div class="chart-copy">
+                    <h2>Giving Level Was Not a Simple Engagement Predictor</h2>
+                    <p class="chart-interpretation">
+                        This pattern shows that giving level alone was not a reliable proxy
+                        for engagement; some donors below the highest giving level showed
+                        substantive engagement and may represent meaningful future
+                        potential.
+                    </p>
+                </div>
+                <div class="chart-panel">
+                    <h3>Average Engagement Score by Giving Level</h3>
+                    <div class="segment-chart" aria-label="Average engagement score and completion rate by giving level">
+                        <div class="segment-row">
+                            <span class="segment-label">Giving Level 1</span>
+                            <span class="segment-track"><span class="segment-fill" style="--bar-width: 70%;"></span></span>
+                            <span class="segment-score">1.54</span>
+                        </div>
+                        <div class="segment-row">
+                            <span class="segment-label">Giving Level 2</span>
+                            <span class="segment-track"><span class="segment-fill" style="--bar-width: 82%;"></span></span>
+                            <span class="segment-score">1.80</span>
+                        </div>
+                        <div class="segment-row">
+                            <span class="segment-label">Giving Level 3</span>
+                            <span class="segment-track"><span class="segment-fill" style="--bar-width: 90%;"></span></span>
+                            <span class="segment-score">1.98</span>
+                        </div>
+                        <div class="segment-row highlight-row">
+                            <span class="segment-label">Giving Level 4</span>
+                            <span class="segment-track"><span class="segment-fill" style="--bar-width: 94%;"></span></span>
+                            <span class="segment-score">2.07</span>
+                        </div>
+                        <div class="segment-row highlight-row">
+                            <span class="segment-label">Giving Level 5</span>
+                            <span class="segment-track"><span class="segment-fill" style="--bar-width: 100%;"></span></span>
+                            <span class="segment-score">2.19</span>
+                        </div>
+                        <div class="segment-row">
+                            <span class="segment-label">Giving Level 6</span>
+                            <span class="segment-track"><span class="segment-fill" style="--bar-width: 71%;"></span></span>
+                            <span class="segment-score">1.56</span>
+                        </div>
+                        <div class="segment-row">
+                            <span class="segment-label">Unlisted</span>
+                            <span class="segment-track"><span class="segment-fill" style="--bar-width: 53%;"></span></span>
+                            <span class="segment-score">1.16</span>
+                        </div>
                     </div>
                 </div>
-                <p class="table-note">Scores above 2 indicate substantive engagement. Highlighted rows show segments that crossed that threshold.</p>
             </div>
+        </section>
 
-            <div class="chart-panel">
-                <h3>Later Activity Rose With Engagement Score</h3>
-                <div class="activity-change-chart" aria-label="Activity rate of change by engagement score">
-                    <div class="activity-change-row">
-                        <span class="segment-label">&lt; 0</span>
-                        <span class="mini-bar"><span style="--bar-width: 11%;"></span></span>
-                        <span class="segment-score">1%</span>
-                    </div>
-                    <div class="activity-change-row">
-                        <span class="segment-label">0-1</span>
-                        <span class="mini-bar"><span style="--bar-width: 56%;"></span></span>
-                        <span class="segment-score">5%</span>
-                    </div>
-                    <div class="activity-change-row">
-                        <span class="segment-label">1-2</span>
-                        <span class="mini-bar"><span style="--bar-width: 78%;"></span></span>
-                        <span class="segment-score">7%</span>
-                    </div>
-                    <div class="activity-change-row highlight-row">
-                        <span class="segment-label">&gt; 2</span>
-                        <span class="mini-bar"><span style="--bar-width: 100%;"></span></span>
-                        <span class="segment-score">9%</span>
+        <section class="chart-section">
+            <div class="chart-card">
+                <div class="chart-copy">
+                    <h2>Engagement Predicted Later Activity</h2>
+                    <p class="chart-interpretation">
+                        The steady rise in later activity suggests that the engagement index
+                        captured more than one-time response; it helped identify donors
+                        whose outreach behavior signaled continued relationship momentum.
+                    </p>
+                </div>
+                <div class="chart-panel">
+                    <h3>Percent Change in Activity by Giving Level</h3>
+                    <div class="activity-change-chart" aria-label="Activity rate of change by engagement score">
+                        <div class="activity-change-row">
+                            <span class="segment-label">&lt; 0</span>
+                            <span class="mini-bar"><span style="--bar-width: 11%;"></span></span>
+                            <span class="segment-score">1%</span>
+                        </div>
+                        <div class="activity-change-row">
+                            <span class="segment-label">0-1</span>
+                            <span class="mini-bar"><span style="--bar-width: 56%;"></span></span>
+                            <span class="segment-score">5%</span>
+                        </div>
+                        <div class="activity-change-row">
+                            <span class="segment-label">1-2</span>
+                            <span class="mini-bar"><span style="--bar-width: 78%;"></span></span>
+                            <span class="segment-score">7%</span>
+                        </div>
+                        <div class="activity-change-row highlight-row">
+                            <span class="segment-label">&gt; 2</span>
+                            <span class="mini-bar"><span style="--bar-width: 100%;"></span></span>
+                            <span class="segment-score">9%</span>
+                        </div>
                     </div>
                 </div>
-                <p class="table-note">Activity-rate change by engagement-score group; the highest engagement group also showed the largest activity and volunteer change in the report.</p>
             </div>
         </section>
 
@@ -259,16 +282,12 @@
             <p>
                 The study recommended refining donor segmentation so outreach strategy is
                 informed by behavioral signals, not giving level alone. Engagement patterns
-                such as opening, clicking, repeat viewing, sharing, downloading, and replying
-                can help identify which donors are receptive to particular forms of
-                recognition and which audiences may respond better to a different message,
-                format, or timing.
-            </p>
-            <p>
-                It also recommended using the engagement index as a comparison tool across
-                future outreach efforts, pairing it with long-term dashboard tracking, and
-                testing smaller targeted recognition projects that are designed around donor
-                response patterns rather than broad stewardship categories.
+                help identify which donors are receptive to particular forms of
+                recognition. This matters because the study showed that gift amount is not
+                the same as engagement level; highly engaged donors at lower giving levels
+                may represent important future relationship and giving potential. These
+                signals can also show which audiences may respond better to a different
+                message, format, or timing.
             </p>
         </section>
     </main>
